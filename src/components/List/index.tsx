@@ -37,7 +37,7 @@ const OrderedList = styled(ListBase).attrs({ as: 'ol' })`
 
 		:before {
 			content: counter(ordered-list-counter);
-			margin-right: ${props => props.theme.space[3]}px;
+			margin-right: ${props => props.theme.space[2]}px;
 			background: ${props => props.theme.colors.info.main};
 			height: ${ORDERED_LIST_SIZE}em;
 			width: ${ORDERED_LIST_SIZE}em;
@@ -55,7 +55,7 @@ const UnorderedList = styled(ListBase)`
 
 		:before {
 			content: '\\2022'; /* Unicode for a bullet character */
-			margin-right: ${props => props.theme.space[3]}px;
+			margin-right: ${props => props.theme.space[2]}px;
 			transform: translateY(
 				-1px
 			); /* The bullet character is misplaced (by design it seems) by 1px, but it looks better if it is centered */

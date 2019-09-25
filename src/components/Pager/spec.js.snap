@@ -84,7 +84,7 @@ exports[`Pager component should match the stored snapshot 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #3c3e42;
+  color: #2A506F;
   border-color: #DDE1f0;
 }
 
@@ -107,14 +107,14 @@ exports[`Pager component should match the stored snapshot 1`] = `
   box-shadow: none;
   background: #DDE1f0;
   border-color: #DDE1f0;
-  color: #3c3e42;
+  color: #2A506F;
   opacity: undefined;
 }
 
 .c8:hover:enabled svg,
 .c8:focus:enabled svg,
 .c8:active:enabled svg {
-  color: #3c3e42 !important;
+  color: #2A506F !important;
 }
 
 .c2 {
