@@ -1,3 +1,5 @@
+import { faSort } from '@fortawesome/free-solid-svg-icons/faSort';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import every from 'lodash/every';
 import filter from 'lodash/filter';
 import find from 'lodash/find';
@@ -11,7 +13,6 @@ import reverse from 'lodash/reverse';
 import some from 'lodash/some';
 import sortBy from 'lodash/sortBy';
 import * as React from 'react';
-import FaSort from 'react-icons/lib/fa/sort';
 import styled from 'styled-components';
 
 import { Button } from '../../';
@@ -19,7 +20,7 @@ import { Button } from '../../';
 // TODO: Remove explicit import and depend on provider instead.
 import theme from '../../theme';
 import { px } from '../../utils';
-import Checkbox from '../Checkbox';
+import Checkbox, { CheckboxProps } from '../Checkbox';
 import Pager from '../Pager';
 import { TableColumn, TableRow } from './TableRow';
 
@@ -97,7 +98,7 @@ const BaseTable = styled.div`
 				background-color: ${props => props.theme.colors.quartenary.light};
 			}
 
-			&: hover {
+			&:hover {
 				text-decoration: none;
 				${(props: any) =>
 					!!props.onRowClick || !!props.getRowHref || !!props.onCheck
@@ -457,11 +458,8 @@ class Table<T> extends React.Component<TableProps<T>, TableState<T>> {
 												>
 													{item.label || item.field}
 													&nbsp;
-													<FaSort
-														style={{
-															display: 'inline-block',
-															marginBottom: '2px',
-														}}
+													<FontAwesomeIcon
+														icon={faSort}
 														color={
 															sort.field === item.field
 																? theme.colors.info.main
@@ -550,7 +548,7 @@ export interface TableProps<T> {
 	onSort?: (sort: TableSortOptions<T>) => void;
 	sort?: TableSortOptions<T>;
 	rowAnchorAttributes?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
-	rowCheckboxAttributes?: React.InputHTMLAttributes<HTMLInputElement>;
+	rowCheckboxAttributes?: CheckboxProps;
 	// Optionally provide a key that should be used as a unique identifier for each row
 	rowKey?: keyof T;
 	tbodyPrefix?: JSX.Element | JSX.Element[];

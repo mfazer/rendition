@@ -1,5 +1,6 @@
+import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import FaClose from 'react-icons/lib/fa/close';
 import styled, { withTheme } from 'styled-components';
 import { Theme } from '../../common-types';
 import Button from '../../components/Button';
@@ -64,7 +65,7 @@ export const DismissableContainer = withTheme(React.forwardRef(
 				{children}
 				{onDismiss && (
 					<DismissButton baselineHeight={baseline} plain onClick={onDismiss}>
-						<FaClose />
+						<FontAwesomeIcon icon={faTimes} />
 					</DismissButton>
 				)}
 			</Wrapper>

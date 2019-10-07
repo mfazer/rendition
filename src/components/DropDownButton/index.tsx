@@ -1,6 +1,7 @@
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
-import ChevronDown from 'react-icons/lib/fa/chevron-down';
-import ChevronUp from 'react-icons/lib/fa/chevron-up';
 import styled from 'styled-components';
 import asRendition from '../../asRendition';
 import { RenditionSystemProps } from '../../common-types';
@@ -93,7 +94,11 @@ const Toggle = ({
 				<JoinedButton {...props} onClick={handler}>
 					<Flex justifyContent="space-between" alignItems="center">
 						<Box mr={2}>{label}</Box>
-						{open ? <ChevronUp /> : <ChevronDown />}
+						{open ? (
+							<FontAwesomeIcon icon={faChevronUp} />
+						) : (
+							<FontAwesomeIcon icon={faChevronDown} />
+						)}
 					</Flex>
 				</JoinedButton>
 			);
@@ -101,7 +106,13 @@ const Toggle = ({
 		return (
 			<JoinedButton
 				{...props}
-				icon={open ? <ChevronUp /> : <ChevronDown />}
+				icon={
+					open ? (
+						<FontAwesomeIcon icon={faChevronUp} />
+					) : (
+						<FontAwesomeIcon icon={faChevronDown} />
+					)
+				}
 				onClick={handler}
 			/>
 		);
@@ -109,7 +120,13 @@ const Toggle = ({
 	return (
 		<ToggleBase
 			{...props}
-			icon={open ? <ChevronUp /> : <ChevronDown />}
+			icon={
+				open ? (
+					<FontAwesomeIcon icon={faChevronUp} />
+				) : (
+					<FontAwesomeIcon icon={faChevronDown} />
+				)
+			}
 			onClick={handler}
 		/>
 	);
